@@ -1,17 +1,5 @@
-/* import "./Card.css";
-
-export default function Card({ image, name, status }) {
-  return (
-    <div className="card_container">
-      {name}
-      <p>
-        <img src={image} alt="" width="100px" />
-      </p>
-      <p>{status}</p>
-    </div>
-  );
-}
- */
+import "./Card.css";
+import { useSelector } from "react-redux";
 
 import React from "react";
 import { connect } from "react-redux";

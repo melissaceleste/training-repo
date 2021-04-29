@@ -4,13 +4,6 @@ import { Provider } from "react-redux"; // connects our store(global state) with
 import App from "./App";
 import { store } from "./redux/store";
 import reportWebVitals from "./reportWebVitals";
-/* import { createStore } from "redux";
-import allReducers from "./redux/reducers"; */
-
-/* const store = createStore(
-  allReducers,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-); */
 
 ReactDOM.render(
   <React.StrictMode>

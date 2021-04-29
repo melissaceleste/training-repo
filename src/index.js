@@ -5,7 +5,10 @@ import reportWebVitals from "./reportWebVitals";
 import { createStore } from "redux";
 import allReducers from "./redux/reducers";
 
-const store = createStore(allReducers);
+const store = createStore(
+  allReducers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 ReactDOM.render(
   <React.StrictMode>
@@ -23,5 +26,5 @@ reportWebVitals();
 // npx install redux react-redux
 // folders: redux -> actions(index.js) & reducers(index.js(combineReducer), ...Reducer.js, ...Reducer.js, ...)
 // write the actions, write the reducers, import everything
-// write the store
+// write the store or write it into the index.js
 // dispatch the store with the reducers for example: store.dispatch(increment())

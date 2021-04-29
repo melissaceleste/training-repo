@@ -1,12 +1,17 @@
 import "./styles/_base.css";
 import Card from "./components/Card";
 import { useEffect, useState } from "react";
+import Counter from "./components/Counter";
+// import { useDispatch, useSelector } from "react-redux";
 
 function App() {
+  /*   const counter = useSelector((state) => state.counter); //useSelector: to have access to the whole counter state:
+  const dispatch = useDispatch(); //gives us the ability to execute an action */
   const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
     getAllCharacters();
+    // eslint-disable-next-line
   }, []);
 
   function getAllCharacters(url = "https://rickandmortyapi.com/api/character") {
@@ -22,6 +27,7 @@ function App() {
 
   return (
     <body>
+      <Counter />
       {characters.map((character) => (
         <Card
           image={character.image}
@@ -34,3 +40,5 @@ function App() {
 }
 
 export default App;
+
+/* onClick={() => dispatch(increment)} // callback with the dispatch function, to execute my increment action */

@@ -1,9 +1,4 @@
-// here comes the actual reducer with switch and case
-const initialState = {
-  value: 0,
-};
-
-const counterReducer = (state = initialState, action) => {
+const counterReducer = (state = 0, action) => {
   switch (action.type) {
     case "INCREMENT":
       return state + 1;
@@ -17,3 +12,5 @@ const counterReducer = (state = initialState, action) => {
 };
 
 export default counterReducer;
+
+// here comes the actual reducer with switch and case

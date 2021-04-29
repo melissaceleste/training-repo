@@ -6,7 +6,7 @@ import Card from "./components/Card";
 // import { useDispatch, useSelector } from "react-redux";
 
 function App() {
-  /* const [characters, setCharacters] = useState([]);
+  const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
     getAllCharacters();
@@ -22,19 +22,19 @@ function App() {
         const nextUrl = data.info.nextUrl; //Paginierung
         nextUrl && getAllCharacters(nextUrl); // er durchläuft das fetchen nochmal nur mit der nextUrl (Url der zweiten Seite)
       });
-  } */
+  }
 
   return (
     <body>
       <Counter />
       <Card />
-      {/*  {characters.map((character) => (
+      {characters.map((character) => (
         <Card
           image={character.image}
           name={character.name}
           status={character.status}
         />
-      ))} */}
+      ))}
       {/* <CardList/> */}
     </body>
   );

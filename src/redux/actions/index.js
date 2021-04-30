@@ -16,22 +16,26 @@ export const decrement = () => {
   };
 };
 
-/* export const fetchPosts = () => {
-  const promise = axios.get("https://rickandmortyapi.com/api/character");
-
-  return {
-    type: "FETCH_POSTS",
-    payload: promise, // has the list of our posts
-  };
-}; */
-
 export const fetchPosts = () => async (dispatch, getState) => {
+  dispatch({ type: "FETCH_POSTS_REQUEST" });
+
+  try {
+    const response = await Axios.get(
+      "https://jsonplaceholder.typicode.com/photos"
+    );
+    dispatch({ type: "FETCH_POSTS_SUCCESS", payload: response.data });
+  } catch (error) {
+    dispatch({ type: "FETCH_POSTS_FAILURE", error });
+  }
+};
+
+/* export const fetchPosts = () => async (dispatch, getState) => {
   const response = await Axios.get(
-    "https://jsonplaceholder.typicode.com/posts"
+    "https://jsonplaceholder.typicode.com/photos"
   );
   //console.log(response.data);
   dispatch({
     type: "FETCH_POSTS",
     payload: response.data,
   });
-};
+}; */

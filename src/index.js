@@ -42,4 +42,5 @@ reportWebVitals();
 //API fetching:
 // npm install axios
 // npm install redux thunk
-//
+// npm install redux-devtools-extension
+// reducer.js, index.js from reducer, actions, store.js, global index.js, component.js, app,js, css

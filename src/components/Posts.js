@@ -2,14 +2,14 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPosts } from "../redux/actions";
 import "./Posts.css";
-//import Card from "./Card";
+import Card from "./Card";
 
 export default function Posts() {
-  const posts = useSelector((state) => state.postsReducer);
+  const state = useSelector((state) => state.postsReducer); // add here the term from the reducer->index.js, to differentiate the states in case, with further reducers
   const dispatch = useDispatch();
 
   console.log("haha");
-  console.log(posts);
+  console.log(state);
   console.log("huhuu");
 
   useEffect(() => {
@@ -18,19 +18,30 @@ export default function Posts() {
 
   return (
     <div className="bla">
-      {posts
-        ? posts.map((el) => {
-            return <div>{el.title}</div>;
-          })
-        : "Loading..."}
-      {/*    {posts.map((el) => (
-        <h3> {el.title} </h3>
-      ))} */}
+      {state.loading ? (
+        <h1>Loading...</h1>
+      ) : (
+        state.items.map((el) => <Card title={el.title} url={el.url} />)
+      )}
     </div>
   );
 }
 
-/* import axios from "axios";
+/*
+  /* 
+  function renderPosts() {
+    if (state.loading) {
+      return <h1>Loading...</h1>;
+    }
+    return state.items.map((el) => <h3> {el.title} </h3>);
+  }
+
+
+        {/*    {renderPosts()} 
+
+
+
+import axios from "axios";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPosts } from "../redux/actions";

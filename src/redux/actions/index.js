@@ -1,6 +1,6 @@
 // where everything  happen // describes what we wanna do
 
-import axios from "axios";
+import Axios from "axios";
 
 export const increment = () => {
   return {
@@ -25,15 +25,13 @@ export const decrement = () => {
   };
 }; */
 
-export const fetchPosts = () => {
-  return async (dispatch, getState) => {
-    const response = await axios.get(
-      "https://rickandmortyapi.com/api/character"
-    );
-    console.log(response.data);
-    dispatch({
-      type: "FETCH_POSTS",
-      payload: response.data,
-    });
-  };
+export const fetchPosts = () => async (dispatch, getState) => {
+  const response = await Axios.get(
+    "https://jsonplaceholder.typicode.com/posts"
+  );
+  //console.log(response.data);
+  dispatch({
+    type: "FETCH_POSTS",
+    payload: response.data,
+  });
 };

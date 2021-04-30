@@ -1,8 +1,8 @@
 import "./styles/_base.css";
-import { useEffect, useState } from "react";
+//import { useEffect, useState } from "react";
 import Counter from "./components/Counter";
 //import CardList from "./components/CardList";
-import Card from "./components/Card";
+//import Card from "./components/Card";
 import Posts from "./components/Posts";
 // import { useDispatch, useSelector } from "react-redux";
 
@@ -26,8 +26,8 @@ function App() {
   }
  */
   return (
-    <body>
-      <Counter />
+    <div>
+      {/*  <Counter /> */}
       <Posts />
       {/*  {characters.map((character) => (
         <Card
@@ -37,7 +37,7 @@ function App() {
         />
       ))} */}
       {/* <CardList/> */}
-    </body>
+    </div>
   );
 }
 

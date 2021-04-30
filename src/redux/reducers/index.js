@@ -7,7 +7,7 @@ import postsReducer from "./postReducer";
 const allReducers = combineReducers({
   counter: counterReducer, // kann hier auch nur counterReducer hinschreiben (selbe wie counterReducer:counterReducer)
   logged: loggedReducer,
-  postsReducer,
+  postsReducer: postsReducer,
 });
 
 export default allReducers;

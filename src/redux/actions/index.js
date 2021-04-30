@@ -16,26 +16,27 @@ export const decrement = () => {
   };
 };
 
-export const fetchPosts = () => async (dispatch, getState) => {
-  dispatch({ type: "FETCH_POSTS_REQUEST" });
+export const fetchRestaurants = () => async (dispatch, getState) => {
+  dispatch({ type: "FETCH_RESTAURANTS_REQUEST" });
 
   try {
     const response = await Axios.get(
       "https://jsonplaceholder.typicode.com/photos"
     );
-    dispatch({ type: "FETCH_POSTS_SUCCESS", payload: response.data });
+    dispatch({ type: "FETCH_RESTAURANTS_SUCCESS", payload: response.data });
   } catch (error) {
-    dispatch({ type: "FETCH_POSTS_FAILURE", error });
+    dispatch({ type: "FETCH_RESTAURANTS_FAILURE", error });
   }
 };
 
-/* export const fetchPosts = () => async (dispatch, getState) => {
-  const response = await Axios.get(
-    "https://jsonplaceholder.typicode.com/photos"
-  );
-  //console.log(response.data);
-  dispatch({
-    type: "FETCH_POSTS",
-    payload: response.data,
-  });
-}; */
+export const showDetails = () => {
+  return {
+    type: "SHOW_DETAILS",
+  };
+};
+
+export const like = () => {
+  return {
+    type: "LIKE",
+  };
+};

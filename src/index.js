@@ -4,12 +4,15 @@ import { Provider } from "react-redux"; // connects our store(global state) with
 import App from "./App";
 import { store } from "./redux/store";
 import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <BrowserRouter>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );
@@ -24,4 +27,19 @@ reportWebVitals();
 // folders: redux -> actions(index.js) & reducers(index.js(combineReducer), ...Reducer.js, ...Reducer.js, ...)
 // write the actions, write the reducers, import everything
 // write the store or write it into the index.js
-// dispatch the store with the reducers for example: store.dispatch(increment())
+// get access to the whole app over the <Provider> in the global index.js
+// call the actual function with the states of the stores in the components:
+// ---> seSelector: to have access to the whole counter state:
+// ---> dispatch the store with the reducers for example: store.dispatch(increment()) gives us the ability to execute an action
+// ---> call the functions from the actions to the part where they should be called (button for example): Import {increment} from './actions' & button onClick={() => dispatch(increment())}
+// finish
+
+// Pagination:
+// npm install react-router-dom
+// Import {BrowserRouter} from.. in index.js
+
+// middleware= between the action and the reducer = a function that returns another function
+//API fetching:
+// npm install axios
+// npm install redux thunk
+//

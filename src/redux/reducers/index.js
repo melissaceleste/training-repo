@@ -2,10 +2,12 @@ import { combineReducers } from "redux";
 // import der reducers
 import counterReducer from "./counter";
 import loggedReducer from "./isLogged";
+import postsReducer from "./postReducer";
 
 const allReducers = combineReducers({
   counter: counterReducer, // kann hier auch nur counterReducer hinschreiben (selbe wie counterReducer:counterReducer)
   logged: loggedReducer,
+  postsReducer,
 });
 
 export default allReducers;

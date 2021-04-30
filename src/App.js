@@ -3,10 +3,11 @@ import { useEffect, useState } from "react";
 import Counter from "./components/Counter";
 //import CardList from "./components/CardList";
 import Card from "./components/Card";
+import Posts from "./components/Posts";
 // import { useDispatch, useSelector } from "react-redux";
 
 function App() {
-  const [characters, setCharacters] = useState([]);
+  /*   const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
     getAllCharacters();
@@ -23,18 +24,18 @@ function App() {
         nextUrl && getAllCharacters(nextUrl); // er durchläuft das fetchen nochmal nur mit der nextUrl (Url der zweiten Seite)
       });
   }
-
+ */
   return (
     <body>
       <Counter />
-      <Card />
-      {characters.map((character) => (
+      <Posts />
+      {/*  {characters.map((character) => (
         <Card
           image={character.image}
           name={character.name}
           status={character.status}
         />
-      ))}
+      ))} */}
       {/* <CardList/> */}
     </body>
   );

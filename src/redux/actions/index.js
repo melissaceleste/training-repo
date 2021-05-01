@@ -40,3 +40,14 @@ export const like = () => {
     type: "LIKE",
   };
 };
+
+export const previousBurger = () => {
+  return {
+    type: "burger/previousBurger",
+  };
+};
+export const nextBurger = () => {
+  return {
+    type: "burger/nextBurger",
+  };
+};

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 export default function Card({ url, title }) {
   const details = useSelector((state) => state.showDetailsReducer); //useSelector: to have access to the whole counter state/ to call the state
-  const liked = useSelector((state) => state.liked);
+  //  const liked = useSelector((state) => state.liked);
   const restaurants = useSelector((state) => state.restaurantsReducer);
   const dispatch = useDispatch(); //gives us the ability to execute an action
 
@@ -17,13 +17,13 @@ export default function Card({ url, title }) {
       <p hidden={!details}>
         <img src={url} alt="" width="100px" />
       </p>
-      <span onClick={() => likeRestaurant(restaurants.id)}>
+      {/*  <span onClick={() => likeRestaurant(restaurants.id)}>
         {liked.includes(restaurants.id) ? "❤️" : "🤍"}
-      </span>
+      </span> */}
     </div>
   );
 
-  function likeRestaurant(currentId) {
+  /*   function likeRestaurant(currentId) {
     let newArray;
 
     // if the clicked id is already inside of likedCharacters
@@ -35,6 +35,6 @@ export default function Card({ url, title }) {
       newArray = [...liked, currentId];
     }
 
-    like(newArray);
-  }
+    dispatch(like(newArray));
+  } */
 }

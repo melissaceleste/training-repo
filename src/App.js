@@ -1,11 +1,14 @@
 import "./styles/_base.css";
 //import Counter from "./components/Counter";
-import CardList from "./components/CardList";
+import CardList1 from "./components/CardList";
+import CardList2 from "./components/CardList2";
 
 function App() {
   return (
     <div>
-      <CardList />
+      {/*    <CardList /> */}
+      {/* <CardList1 /> */}
+      <CardList2 />
     </div>
   );
 }

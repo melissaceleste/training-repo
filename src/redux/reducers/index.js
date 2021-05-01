@@ -5,6 +5,7 @@ import loggedReducer from "./isLogged";
 import restaurantsReducer from "./restaurantReducer";
 import showDetailsReducer from "./showDetailsReducer";
 import like from "./like";
+import pageReducer from "./burger";
 
 const allReducers = combineReducers({
   counter: counterReducer, // kann hier auch nur counterReducer hinschreiben (selbe wie counterReducer:counterReducer)
@@ -12,6 +13,7 @@ const allReducers = combineReducers({
   restaurantsReducer: restaurantsReducer,
   showDetailsReducer: showDetailsReducer,
   liked: like,
+  page: pageReducer,
 });
 
 export default allReducers;

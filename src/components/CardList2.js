@@ -13,11 +13,10 @@ export default function CardList() {
     dispatch(fetchRestaurants());
   }, []);
 
-  const [restaurantsPerPage, setRestaurantsPerPage] = useState(10);
-  const [pageLimit, setPageLimit] = useState(15);
-  const [pages] = useState(
-    Math.round(restaurants.items.length / restaurantsPerPage)
-  );
+  const restaurantsPerPage = 10;
+  const pageLimit = 5;
+  const pages = Math.round(restaurants.items.length / restaurantsPerPage);
+
   const [currentPage, setCurrentPage] = useState(1);
 
   function goToNextPage() {

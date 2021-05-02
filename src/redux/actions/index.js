@@ -41,13 +41,14 @@ export const like = () => {
   };
 };
 
-export const previousBurger = () => {
+export const previousPage = () => {
   return {
-    type: "burger/previousBurger",
+    type: "pagination/goToPreviousPage",
   };
 };
-export const nextBurger = () => {
+
+export const nextPage = () => {
   return {
-    type: "burger/nextBurger",
+    type: "pagination/goToNextPage",
   };
 };

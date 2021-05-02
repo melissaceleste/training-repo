@@ -14,7 +14,7 @@ export default function Card({ url, title }) {
       <button onClick={() => dispatch(showDetails(!details))}>
         show details
       </button>
-      <p hidden={!details}>
+      <p hidden={details}>
         <img src={url} alt="" width="100px" />
       </p>
       {/*  <span onClick={() => likeRestaurant(restaurants.id)}>
@@ -35,6 +35,6 @@ export default function Card({ url, title }) {
       newArray = [...liked, currentId];
     }
 
-    dispatch(like(newArray));
+    dispatch(like(newArray);
   } */
 }

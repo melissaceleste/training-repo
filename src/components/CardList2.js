@@ -3,8 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchRestaurants } from "../redux/actions";
 import "./Posts.css";
 import Card from "./Card";
-import { rest } from "lodash";
-import Pagination2 from "./Pagination2";
 
 export default function CardList() {
   const restaurants = useSelector((state) => state.restaurantsReducer); // add here the term from the reducer->index.js, to differentiate the states in case, with further reducers

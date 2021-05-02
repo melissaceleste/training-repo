@@ -13,17 +13,12 @@ export default function CardList() {
     dispatch(fetchRestaurants());
   }, []);
 
-  const [postsPerPage, setPostsPerPage] = useState(10);
-  const [pageLimit, setPageLimit] = useState(5);
-  const [pages] = useState(Math.round(restaurants.items.length / postsPerPage));
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = restaurants.items.slice(
-    indexOfFirstPost,
-    indexOfLastPost
+  const [restaurantsPerPage, setRestaurantsPerPage] = useState(10);
+  const [pageLimit, setPageLimit] = useState(15);
+  const [pages] = useState(
+    Math.round(restaurants.items.length / restaurantsPerPage)
   );
+  const [currentPage, setCurrentPage] = useState(1);
 
   function goToNextPage() {
     setCurrentPage((page) => page + 1);
@@ -33,14 +28,15 @@ export default function CardList() {
     setCurrentPage((page) => page - 1);
   }
 
+  // get the page which the user clicks and change it to this
   function changePage(event) {
     const pageNumber = Number(event.target.textContent);
     setCurrentPage(pageNumber);
   }
 
   const getPaginatedData = () => {
-    const startIndex = currentPage * postsPerPage - postsPerPage;
-    const endIndex = startIndex + postsPerPage;
+    const startIndex = currentPage * restaurantsPerPage - restaurantsPerPage;
+    const endIndex = startIndex + restaurantsPerPage;
     return restaurants.items.slice(startIndex, endIndex);
   };
 

@@ -14,7 +14,7 @@ const allReducers = combineReducers({
   restaurantsReducer: restaurantsReducer,
   showDetailsReducer: showDetailsReducer,
   liked: like,
-  currentPage: currentPageReducer,
+  currentPageReducer: currentPageReducer,
 });
 
 export default allReducers;

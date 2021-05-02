@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchRestaurants } from "../redux/actions";
+import { fetchRestaurants, previousPage, nextPage } from "../redux/actions";
 import "./Posts.css";
 import Card from "./Card";
 
 export default function CardList() {
   const restaurants = useSelector((state) => state.restaurantsReducer); // add here the term from the reducer->index.js, to differentiate the states in case, with further reducers
+  const currentPage = useSelector((state) => state.currentPageReducer); // add here the term from the reducer->index.js, to differentiate the states in case, with further reducers
 
   const dispatch = useDispatch();
 
@@ -17,20 +18,20 @@ export default function CardList() {
   const pageLimit = 5;
   const pages = Math.round(restaurants.items.length / restaurantsPerPage);
 
-  const [currentPage, setCurrentPage] = useState(1);
+  // const [currentPage, setCurrentPage] = useState(1);
 
   function goToNextPage() {
-    setCurrentPage((page) => page + 1);
+    dispatch(nextPage());
   }
 
   function goToPreviousPage() {
-    setCurrentPage((page) => page - 1);
+    dispatch(nextPage(previousPage));
   }
 
   // get the page which the user clicks and change it to this
   function changePage(event) {
     const pageNumber = Number(event.target.textContent);
-    setCurrentPage(pageNumber);
+    dispatch(currentPageReducer(pageNumber));
   }
 
   const getPaginatedData = () => {

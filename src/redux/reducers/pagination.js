@@ -1,4 +1,4 @@
-export const restaurantsPerPage = (state = 10, action) => {
+/* export const restaurantsPerPage = (state = 10, action) => {
   switch (action.type) {
     case "pagination/restaurantsPerPage":
       return state;
@@ -14,7 +14,7 @@ export const pageLimit = (state = 5, action) => {
     default:
       return state;
   }
-};
+}; */
 
 export const currentPageReducer = (state = 1, action) => {
   switch (action.type) {
